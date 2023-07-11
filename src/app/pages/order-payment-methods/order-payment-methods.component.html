@@ -1,0 +1,16 @@
+<div>
+  <ul>
+    <li *ngFor="let payment of paymentMethods">
+      <label (click)="setPatmentMethodSelected(payment?.id)">
+        <input type="radio" name="paymentMethod" value="{{ payment?.value }}">
+        {{ payment?.name }}
+      </label>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <ng-template [ngIf]="paymentMethodSelected === 2">
+    <app-payment-method-form></app-payment-method-form>
+  </ng-template>
+</div>

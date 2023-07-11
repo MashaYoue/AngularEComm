@@ -1,0 +1,9 @@
+<p>product-category-list works!</p>
+
+<ul>
+  <li *ngFor="let category of productCategories">
+    <span>{{ category?.name }}</span>
+  </li>
+</ul>
+
+<button (click)="goToNewProductCategory()">Nueva categoria</button>

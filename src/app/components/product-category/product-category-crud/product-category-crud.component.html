@@ -1,0 +1,28 @@
+<form [formGroup]="productCategoryForm">
+  <div>
+    <label>Nombre categoria: </label>
+    <input formControlName="name">
+  </div>
+
+  <div>
+    <label>Description: </label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <label>Codigo: </label>
+    <input type="number" formControlName="code">
+  </div>
+
+  <div>
+    <label>ParentCode: </label>
+    <input app-input [data]="{
+      placeholder: 'categoria padre',
+      disabled: true
+    }"
+    type="number" formControlName="parentCode">
+  </div>
+
+  <button type="submit" (click)="submitForm()" app-button [data]="dataButton" [disabled]="!productCategoryForm.valid"></button>
+
+</form>
